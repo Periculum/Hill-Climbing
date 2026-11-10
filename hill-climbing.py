@@ -8,7 +8,7 @@ from pathlib import Path
 
 class HillClimbing:
     def __init__(self, trigram_file, alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                 restarts=20, steps=2500):
+                 restarts=50, steps=5000):
         self.alphabet = alphabet
         self.restarts = restarts
         self.steps = steps
@@ -152,8 +152,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("ciphertext", help="Datei mit dem Geheimtext")
     parser.add_argument("--trigrams", default=Path(__file__).with_name("german_trigrams.txt"))
-    parser.add_argument("--restarts", type=int, default=20)
-    parser.add_argument("--steps", type=int, default=2500)
+    parser.add_argument("--restarts", type=int, default=50)
+    parser.add_argument("--steps", type=int, default=5000)
     parser.add_argument("--seed", type=int)
     parser.add_argument("--type", choices=["substitution", "transposition"],
                         default="substitution")
