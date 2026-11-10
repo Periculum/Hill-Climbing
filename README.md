@@ -23,8 +23,8 @@ python3 hill_climbing.py cipher.txt --type transposition
 
 - `--type {substitution,transposition}` – Choose the cipher type (default: `substitution`).
 - `--trigrams FILE` – Specify the trigram frequency file (default: `german_trigrams.txt`).
-- `--restarts N` – Number of random restarts (default: `20`).
-- `--steps N` – Number of key swaps per restart (default: `2500`).
+- `--restarts N` – Number of random restarts (default: `50`).
+- `--steps N` – Number of key swaps per restart (default: `5000`).
 - `--seed N` – Set a random seed for reproducible results.
 - `--min-key N` – Minimum column count for transposition (default: `4`).
 - `--max-key N` – Maximum column count for transposition (default: `12`).
