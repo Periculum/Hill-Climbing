@@ -114,8 +114,12 @@ class HillClimbing:
             print("Spaltenreihenfolge:", tuple(col + 1 for col in key))
             plaintext = self.decrypt_transposition(letters, key)
         else:
-            print("Geheimtextalphabet:", self.alphabet)
-            print("Klartextalphabet: ", "".join(key))
+            # Entschlüsselungszuordnung umkehren
+            zuordnung = dict(zip(key, self.alphabet))
+            schluessel = "".join(zuordnung[c] for c in self.alphabet)
+
+            print("Klartextalphabet:   ", self.alphabet)
+            print("Schlüsselalphabet:  ", schluessel)
             plaintext = self.decrypt(ciphertext, key)
 
         print("\nBester Klartext:\n", plaintext)
